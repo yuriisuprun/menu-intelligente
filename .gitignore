@@ -1,0 +1,39 @@
+# Build output
+/build/
+/out/
+/bin/
+/target/
+
+# Java compiled artifacts
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.jpi
+*.hprof
+
+# Logs
+*.log
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Environment and local secrets
+.env
+.env.*
+*.local
