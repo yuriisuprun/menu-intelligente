@@ -3,6 +3,8 @@
 /out/
 /bin/
 /target/
+dist/
+coverage/
 
 # Java compiled artifacts
 *.class
@@ -15,6 +17,12 @@
 
 # Logs
 *.log
+*.out
+*.err
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
 # IntelliJ IDEA
 .idea/
@@ -32,8 +40,31 @@
 .DS_Store
 Thumbs.db
 Desktop.ini
+$RECYCLE.BIN/
 
 # Environment and local secrets
 .env
 .env.*
 *.local
+
+# Dependency and tool caches
+.gradle/
+.mvn/timing.properties
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/cache/
+.yarn/unplugged/
+
+# Test and runtime artifacts
+*.pid
+*.pid.lock
+*.seed
+*.stackdump
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
