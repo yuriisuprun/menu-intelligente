@@ -11,7 +11,7 @@ export default function HomePage() {
       </header>
       <section className="mt-16 grid gap-6 md:grid-cols-2">
         <div>
-          <h2 className="text-4xl font-semibold leading-tight">Multilingual AI menus for premium Milan hospitality.</h2>
+          <h2 className="text-4xl font-semibold leading-tight">Multilingual AI menus.</h2>
           <p className="mt-4 text-white/80">
             QR-first guest experience, dynamic menu management, and AI translation tuned for international visitors.
           </p>
