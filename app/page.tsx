@@ -52,7 +52,7 @@ export default function HomePage() {
 
       <footer className="bg-[#232429] py-10 text-center text-xl text-[#8f9094] sm:text-2xl">
         <p>
-          BONCELLI 1 SRL - Via Pisacane 24, 20129 Milano MI - P IVA 06221220962 Privacy Policy - Cookie Policy
+          Milano MI Privacy Policy - Cookie Policy
         </p>
       </footer>
     </main>
