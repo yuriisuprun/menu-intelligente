@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/swc-win32-x64-msvc": "^15.0.3",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-dropdown-menu": "^2.1.2",
     "@supabase/auth-helpers-nextjs": "^0.10.0",
@@ -17,7 +18,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.15.0",
     "lucide-react": "^0.454.0",
-    "next": "15.0.3",
+    "next": "^15.0.3",
     "openai": "^4.80.1",
     "qrcode": "^1.5.4",
     "react": "18.3.1",
