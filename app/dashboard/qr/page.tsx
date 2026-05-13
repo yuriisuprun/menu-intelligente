@@ -1,7 +1,7 @@
 import QRCode from "qrcode";
 
 export default async function QrPage() {
-  const menuUrl = `${process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"}/menu/tavola-demo-milano?table=12`;
+  const menuUrl = `${process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"}/menu/tavola-demo?table=12`;
   const qr = await QRCode.toDataURL(menuUrl, { width: 280, margin: 1 });
 
   return (

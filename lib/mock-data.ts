@@ -2,8 +2,8 @@ import { Dish, Tenant } from "@/types/domain";
 
 export const demoTenant: Tenant = {
   id: "demo-tenant",
-  name: "Tavola Demo Milano",
-  slug: "tavola-demo-milano",
+  name: "Tavola Demo",
+  slug: "tavola-demo",
   city: "Milan",
   plan_tier: "premium"
 };

@@ -15,7 +15,7 @@ export default function HomePage() {
           <p className="mt-4 text-white/80">
             QR-first guest experience, dynamic menu management, and AI translation tuned for international visitors.
           </p>
-          <Link href="/menu/tavola-demo-milano" className="mt-6 inline-block rounded-md border border-gold/40 px-4 py-2 text-gold">
+          <Link href="/menu/tavola-demo" className="mt-6 inline-block rounded-md border border-gold/40 px-4 py-2 text-gold">
             Open Demo Menu
           </Link>
         </div>

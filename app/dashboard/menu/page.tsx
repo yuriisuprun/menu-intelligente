@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dish } from "@/types/domain";
 
-const tenantSlug = "tavola-demo-milano";
+const tenantSlug = "tavola-demo";
 
 export default function DashboardMenuPage() {
   const [dishes, setDishes] = useState<Dish[]>([]);
