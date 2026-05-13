@@ -1,19 +1,19 @@
 export default function DashboardPage() {
   return (
     <div>
-      <h1 className="text-2xl font-semibold">Restaurant Overview</h1>
-      <div className="mt-4 grid gap-3 md:grid-cols-3">
-        <div className="rounded-lg border border-white/10 p-4">
-          <p className="text-sm text-white/70">Active Menus</p>
-          <p className="text-2xl text-gold">4</p>
+      <h1 className="text-3xl font-semibold tracking-tight text-slate-900">Restaurant Overview</h1>
+      <div className="mt-6 grid gap-4 md:grid-cols-3">
+        <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+          <p className="text-sm font-medium text-slate-500">Active Menus</p>
+          <p className="mt-2 text-3xl font-semibold text-gold">4</p>
         </div>
-        <div className="rounded-lg border border-white/10 p-4">
-          <p className="text-sm text-white/70">Scans (7d)</p>
-          <p className="text-2xl text-gold">1,284</p>
+        <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+          <p className="text-sm font-medium text-slate-500">Scans (7d)</p>
+          <p className="mt-2 text-3xl font-semibold text-gold">1,284</p>
         </div>
-        <div className="rounded-lg border border-white/10 p-4">
-          <p className="text-sm text-white/70">Top Language</p>
-          <p className="text-2xl text-gold">EN</p>
+        <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+          <p className="text-sm font-medium text-slate-500">Top Language</p>
+          <p className="mt-2 text-3xl font-semibold text-gold">EN</p>
         </div>
       </div>
     </div>

@@ -44,23 +44,38 @@ export default function DashboardMenuPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-semibold">Menu Editor</h1>
-      <div className="mt-4 grid gap-2 rounded-lg border border-white/10 p-4 md:grid-cols-4">
-        <input className="rounded border border-white/20 bg-white/5 p-2" value={name} onChange={(e) => setName(e.target.value)} placeholder="Dish name" />
-        <input className="rounded border border-white/20 bg-white/5 p-2" value={category} onChange={(e) => setCategory(e.target.value)} placeholder="Category" />
-        <input className="rounded border border-white/20 bg-white/5 p-2" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Price" />
+      <h1 className="text-3xl font-semibold tracking-tight text-slate-900">Menu Editor</h1>
+      <div className="mt-6 grid gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4 md:grid-cols-4">
+        <input
+          className="h-10 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-gold/70 focus:ring-2 focus:ring-gold/20"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Dish name"
+        />
+        <input
+          className="h-10 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-gold/70 focus:ring-2 focus:ring-gold/20"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          placeholder="Category"
+        />
+        <input
+          className="h-10 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-gold/70 focus:ring-2 focus:ring-gold/20"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+          placeholder="Price"
+        />
         <Button onClick={addDish} disabled={!name}>
           Add Dish
         </Button>
       </div>
-      <div className="mt-5 space-y-2">
+      <div className="mt-6 space-y-2">
         {dishes.map((dish) => (
-          <div key={dish.id} className="flex items-center justify-between rounded-lg border border-white/10 p-3">
+          <div key={dish.id} className="flex items-center justify-between rounded-lg border border-slate-200 bg-white p-3">
             <div>
-              <p>{dish.name}</p>
-              <p className="text-sm text-white/70">{dish.category}</p>
+              <p className="font-medium text-slate-800">{dish.name}</p>
+              <p className="text-sm text-slate-500">{dish.category}</p>
             </div>
-            <p className="text-gold">EUR {(dish.price_cents / 100).toFixed(2)}</p>
+            <p className="font-medium text-gold">EUR {(dish.price_cents / 100).toFixed(2)}</p>
           </div>
         ))}
       </div>
