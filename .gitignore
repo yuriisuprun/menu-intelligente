@@ -1,68 +1,55 @@
-# Build output
-/build/
-/out/
-/bin/
-/target/
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Build output and coverage
+build/
 dist/
 coverage/
 
-# Java compiled artifacts
-*.class
-*.jar
-*.war
-*.ear
-*.nar
-*.jpi
-*.hprof
-
 # Logs
 *.log
-*.out
-*.err
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# IntelliJ IDEA
+# Env and local secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# TypeScript
+*.tsbuildinfo
+
+# IDE/editor
 .idea/
 *.iml
-
-# Eclipse
-.classpath
-.project
-.settings/
-
-# VS Code
 .vscode/
 
-# OS files
+# OS artifacts
 .DS_Store
 Thumbs.db
 Desktop.ini
 $RECYCLE.BIN/
 
-# Environment and local secrets
-.env
-.env.*
-*.local
-
-# Dependency and tool caches
-.gradle/
-.mvn/timing.properties
-node_modules/
+# Tool caches
 .npm/
 .pnpm-store/
 .yarn/cache/
 .yarn/unplugged/
+.gradle/
+.mvn/timing.properties
 
-# Test and runtime artifacts
+# Runtime/temp
 *.pid
 *.pid.lock
 *.seed
 *.stackdump
-
-# Temporary files
 *.tmp
 *.temp
 *.swp
