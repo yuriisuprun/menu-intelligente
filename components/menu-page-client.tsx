@@ -30,7 +30,7 @@ export function MenuPageClient({ slug }: { slug: string }) {
       <header className="mb-6 flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-semibold">{tenantName}</h1>
-          <p className="text-sm text-white/70">Luxury multilingual menu</p>
+          <p className="text-sm text-white/70">Multilingual menu</p>
         </div>
         <div className="flex items-center gap-3">
           <LanguageSwitcher value={language} onChange={setLanguage} />

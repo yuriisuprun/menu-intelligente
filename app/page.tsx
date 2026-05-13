@@ -21,28 +21,31 @@ export default function HomePage() {
         <div className="min-h-[650px]">
           <img
             src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=80"
-            alt="Pagina del menù degustazione su tavolo del ristorante"
+            alt="Restaurant table menu experience"
             className="h-full w-full object-cover"
           />
         </div>
         <article className="flex min-h-[650px] items-center bg-[#f1f1f1] px-8 py-14 sm:px-14 md:px-16 lg:px-20">
           <div className="max-w-[520px] space-y-10">
             <h1 className="text-4xl font-semibold uppercase tracking-[0.08em] text-[#1d2533] sm:text-5xl">
-              Menù Degustazione
+              Tavola AI
             </h1>
             <div className="space-y-7 text-[33px] leading-[1.65] text-[#1f2532] sm:text-[34px]">
               <p>
-                Il nostro <strong className="font-semibold">menù degustazione</strong> da 5 portate consigliate da noi. Fatevi coccolare!
+                Multilingual digital menus for international guests.
               </p>
               <p>
-                I piatti scelti dovranno essere <strong className="font-semibold">uguali</strong> per tutti i componenti del tavolo.
+                QR-first guest experience, dynamic menu management, and AI translation for restaurants.
               </p>
             </div>
-            <ul className="space-y-2 text-[34px] leading-[1.45] text-[#1f2532]">
-              <li><strong className="font-semibold">Degustazione 5 portate</strong> (no bevande) €70</li>
-              <li><strong className="font-semibold">Abbinamento vini 3 calici</strong> €25</li>
-              <li><strong className="font-semibold">Abbinamento vini 5 calici</strong> €45</li>
-            </ul>
+            <div className="flex flex-wrap gap-4 text-[20px] leading-[1.45] text-[#1f2532] sm:text-[22px]">
+              <Link href="/menu/tavola-demo" className="border border-[#1f2532] px-5 py-2 font-semibold uppercase tracking-[0.08em]">
+                Open Demo Menu
+              </Link>
+              <Link href="/dashboard" className="border border-[#1f2532] px-5 py-2 font-semibold uppercase tracking-[0.08em]">
+                Restaurant Login
+              </Link>
+            </div>
           </div>
         </article>
       </section>
