@@ -16,27 +16,31 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   return (
-    <main className="mx-auto grid min-h-screen max-w-7xl grid-cols-1 gap-6 px-4 py-6 md:grid-cols-[240px_1fr] md:px-6">
-      <aside className="h-fit rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
-        <h2 className="mb-5 text-xl font-semibold text-gold">Tavola AI</h2>
-        <nav className="grid gap-1.5">
-          {items.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition ${
-                pathname === item.href
-                  ? "bg-gold/10 text-gold"
-                  : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
-              }`}
-            >
-              <item.icon className="h-4 w-4" />
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-      </aside>
-      <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm md:p-6">{children}</section>
+    <main className="mx-auto min-h-screen w-full max-w-7xl px-4 py-6 md:px-6">
+      <div className="rounded-xl border border-[#d8e4f5] bg-white/90 p-3 shadow-[0_8px_28px_rgba(15,35,66,0.06)] backdrop-blur">
+        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <h2 className="px-2 text-lg font-semibold tracking-tight text-[#16345f]">Tavola AI</h2>
+          <nav className="flex flex-wrap gap-1.5">
+            {items.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition ${
+                  pathname === item.href
+                    ? "bg-[#e6f0ff] text-gold"
+                    : "text-slate-600 hover:bg-[#f1f6ff] hover:text-[#1d4f9f]"
+                }`}
+              >
+                <item.icon className="h-4 w-4" />
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </div>
+      <section className="mt-6 rounded-xl border border-[#d8e4f5] bg-white/95 p-5 shadow-[0_8px_28px_rgba(15,35,66,0.05)] md:p-6">
+        {children}
+      </section>
     </main>
   );
 }

@@ -8,6 +8,6 @@
 
 body {
   margin: 0;
-  background: #f3f3f3;
-  color: #1e2330;
+  background: radial-gradient(circle at top right, #edf5ff 0%, #f6f9fc 42%, #f4f7fb 100%);
+  color: #13233d;
 }

@@ -8,7 +8,7 @@ const config: Config = {
       colors: {
         bg: "#0F1115",
         fg: "#F5F6F7",
-        gold: "#C9A96A"
+        gold: "#2F6FDD"
       }
     }
   },

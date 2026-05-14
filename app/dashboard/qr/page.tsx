@@ -9,13 +9,13 @@ export default async function QrPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-semibold tracking-tight text-slate-900">QR Management</h1>
+      <h1 className="text-3xl font-semibold tracking-tight text-[#17345f]">QR Management</h1>
       <p className="mt-2 text-sm text-slate-600">
         {tenantSlug ? "Table-specific dynamic QR for Table 12." : "Set NEXT_PUBLIC_TENANT_SLUG to generate menu QR codes."}
       </p>
-      <div className="mt-6 w-fit rounded-lg border border-slate-200 bg-slate-50 p-4">
+      <div className="mt-6 w-fit rounded-lg border border-[#d9e4f4] bg-[#f7faff] p-4">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={qr} alt="QR code" className="rounded-md border border-slate-200 bg-white p-3" />
+        <img src={qr} alt="QR code" className="rounded-md border border-[#d9e4f4] bg-white p-3" />
       </div>
     </div>
   );

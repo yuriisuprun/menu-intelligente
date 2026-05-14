@@ -46,27 +46,27 @@ export default function DashboardMenuPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-semibold tracking-tight text-slate-900">Menu Editor</h1>
+      <h1 className="text-3xl font-semibold tracking-tight text-[#17345f]">Menu Editor</h1>
       {!tenantSlug && (
         <p className="mt-4 rounded-md border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900">
           Set NEXT_PUBLIC_TENANT_SLUG to load and edit your menu.
         </p>
       )}
-      <div className="mt-6 grid gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4 md:grid-cols-4">
+      <div className="mt-6 grid gap-3 rounded-lg border border-[#d9e4f4] bg-[#f7faff] p-4 md:grid-cols-4">
         <input
-          className="h-10 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-gold/70 focus:ring-2 focus:ring-gold/20"
+          className="h-10 rounded-md border border-[#c9d8ee] bg-white px-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-gold/70 focus:ring-2 focus:ring-gold/20"
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Dish name"
         />
         <input
-          className="h-10 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-gold/70 focus:ring-2 focus:ring-gold/20"
+          className="h-10 rounded-md border border-[#c9d8ee] bg-white px-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-gold/70 focus:ring-2 focus:ring-gold/20"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
           placeholder="Category"
         />
         <input
-          className="h-10 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-gold/70 focus:ring-2 focus:ring-gold/20"
+          className="h-10 rounded-md border border-[#c9d8ee] bg-white px-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-gold/70 focus:ring-2 focus:ring-gold/20"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
           placeholder="Price"
@@ -77,7 +77,7 @@ export default function DashboardMenuPage() {
       </div>
       <div className="mt-6 space-y-2">
         {dishes.map((dish) => (
-          <div key={dish.id} className="flex items-center justify-between rounded-lg border border-slate-200 bg-white p-3">
+          <div key={dish.id} className="flex items-center justify-between rounded-lg border border-[#d9e4f4] bg-white p-3">
             <div>
               <p className="font-medium text-slate-800">{dish.name}</p>
               <p className="text-sm text-slate-500">{dish.category}</p>
