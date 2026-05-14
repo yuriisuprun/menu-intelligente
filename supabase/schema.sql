@@ -127,6 +127,7 @@ create table if not exists public.dishes (
   id uuid primary key default gen_random_uuid(),
   tenant_id uuid not null references public.tenants(id) on delete cascade,
   category_id uuid references public.menu_categories(id) on delete set null,
+  category text not null default 'Main',
   name text not null,
   description_it text not null default '',
   translations jsonb not null default '{}'::jsonb,

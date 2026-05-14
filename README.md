@@ -42,16 +42,15 @@ docs/SAAS_ARCHITECTURE.md
 
 1. Install dependencies:
    - `npm install`
-2. Create `.env.local`:
-   - `NEXT_PUBLIC_SUPABASE_URL=...`
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY=...`
-   - `SUPABASE_SERVICE_ROLE_KEY=...`
-   - `GROQ_API_KEY=...`
-   - `GROQ_MODEL=llama-3.1-8b-instant` (optional)
-   - `NEXT_PUBLIC_TENANT_SLUG=...`
-3. Apply DB schema from [supabase/schema.sql](/C:/Users/yurii/MyProjects/tavola-ai/supabase/schema.sql).
+2. Copy `.env.example` to `.env.local` and fill values.
+3. Apply DB SQL files in this order:
+   - [supabase/schema.sql](/C:/Users/yurii/MyProjects/tavola-ai/supabase/schema.sql)
+   - [supabase/patch_add_dishes_category.sql](/C:/Users/yurii/MyProjects/tavola-ai/supabase/patch_add_dishes_category.sql)
+   - [supabase/local_seed.sql](/C:/Users/yurii/MyProjects/tavola-ai/supabase/local_seed.sql) (optional demo data)
 4. Run:
    - `npm run dev`
+
+Detailed guide: [docs/LOCAL_SETUP.md](/C:/Users/yurii/MyProjects/tavola-ai/docs/LOCAL_SETUP.md)
 
 ## Production Build
 
