@@ -16,7 +16,7 @@ Tavola AI is not a "just QR menu" product. It is a multi-tenant SaaS system for 
 - Next.js 15 App Router + TypeScript
 - Supabase (Postgres, Auth, RLS)
 - Stripe payments
-- OpenAI API
+- Groq API (OpenAI-compatible)
 - Tailwind CSS + Radix primitives
 
 ## Project Structure
@@ -46,8 +46,8 @@ docs/SAAS_ARCHITECTURE.md
    - `NEXT_PUBLIC_SUPABASE_URL=...`
    - `NEXT_PUBLIC_SUPABASE_ANON_KEY=...`
    - `SUPABASE_SERVICE_ROLE_KEY=...`
-   - `OPENAI_API_KEY=...`
-   - `STRIPE_SECRET_KEY=...`
+   - `GROQ_API_KEY=...`
+   - `GROQ_MODEL=llama-3.1-8b-instant` (optional)
    - `NEXT_PUBLIC_TENANT_SLUG=...`
 3. Apply DB schema from [supabase/schema.sql](/C:/Users/yurii/MyProjects/tavola-ai/supabase/schema.sql).
 4. Run:

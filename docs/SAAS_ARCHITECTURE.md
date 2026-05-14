@@ -180,7 +180,7 @@ UI constraints:
 - Frontend/API runtime: Vercel (recommended) or self-hosted Node
 - Database/Auth: Supabase project
 - Payments: Stripe
-- AI provider: OpenAI
+- AI provider: Groq (OpenAI-compatible API)
 
 ### Steps
 
@@ -189,9 +189,10 @@ UI constraints:
    - `NEXT_PUBLIC_SUPABASE_URL`
    - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
    - `SUPABASE_SERVICE_ROLE_KEY`
-   - `OPENAI_API_KEY`
-   - `STRIPE_SECRET_KEY`
-   - `STRIPE_WEBHOOK_SECRET`
+   - `GROQ_API_KEY`
+   - `GROQ_MODEL` (optional)
+   - `STRIPE_SECRET_KEY` (only if/when payments endpoints are implemented)
+   - `STRIPE_WEBHOOK_SECRET` (only if/when payments webhook is implemented)
 3. Deploy to Vercel with production env vars.
 4. Configure Stripe webhook to `/api/payments/webhook`.
 5. Seed a tenant and generate QR codes.
