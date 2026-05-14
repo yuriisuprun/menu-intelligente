@@ -1,12 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Dish } from "@/types/domain";
 
-const tenantSlug = process.env.NEXT_PUBLIC_TENANT_SLUG ?? "";
+const envTenantSlug = process.env.NEXT_PUBLIC_TENANT_SLUG ?? "";
 
 export default function DashboardMenuPage() {
+  const searchParams = useSearchParams();
+  const tenantSlug = searchParams.get("slug") ?? envTenantSlug;
   const [dishes, setDishes] = useState<Dish[]>([]);
   const [name, setName] = useState("");
   const [category, setCategory] = useState("Antipasti");
@@ -49,7 +52,7 @@ export default function DashboardMenuPage() {
       <h1 className="text-3xl font-semibold tracking-tight text-[#17345f]">Menu Editor</h1>
       {!tenantSlug && (
         <p className="mt-4 rounded-md border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900">
-          Set NEXT_PUBLIC_TENANT_SLUG to load and edit your menu.
+          Missing tenant slug. Open this page as <code>/dashboard/menu?slug=your-tenant-slug</code> or set NEXT_PUBLIC_TENANT_SLUG.
         </p>
       )}
       <div className="mt-6 grid gap-3 rounded-lg border border-[#d9e4f4] bg-[#f7faff] p-4 md:grid-cols-4">
