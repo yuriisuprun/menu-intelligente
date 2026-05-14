@@ -1,35 +1,24 @@
 import OpenAI from "openai";
 
-type AiProvider = "openai" | "groq";
-
-function getProvider(): AiProvider {
-  const rawProvider = process.env.AI_PROVIDER?.trim().toLowerCase();
-  if (rawProvider === "openai" || rawProvider === "groq") return rawProvider;
-  if (process.env.GROQ_API_KEY) return "groq";
-  return "openai";
+function getRequiredEnv(name: string): string {
+  const value = process.env[name]?.trim();
+  if (!value) throw new Error(`${name} is missing`);
+  return value;
 }
 
-function getModel(provider: AiProvider): string {
-  if (provider === "groq") return process.env.GROQ_MODEL?.trim() || "llama-3.1-8b-instant";
-  return process.env.OPENAI_MODEL?.trim() || "gpt-4.1-mini";
-}
+const groqClient = new OpenAI({
+  apiKey: getRequiredEnv("GROQ_API_KEY"),
+  baseURL: "https://api.groq.com/openai/v1"
+});
 
-function getClient(provider: AiProvider) {
-  if (provider === "groq") {
-    const key = process.env.GROQ_API_KEY;
-    if (!key) throw new Error("GROQ_API_KEY is missing");
-    return new OpenAI({ apiKey: key, baseURL: "https://api.groq.com/openai/v1" });
-  }
-
-  const key = process.env.OPENAI_API_KEY;
-  if (!key) throw new Error("OPENAI_API_KEY is missing");
-  return new OpenAI({ apiKey: key });
+function getModel() {
+  return process.env.GROQ_MODEL?.trim() || "llama-3.1-8b-instant";
 }
 
 async function generateText(prompt: string, system: string) {
-  const provider = getProvider();
-  const completion = await getClient(provider).chat.completions.create({
-    model: getModel(provider),
+  const completion = await groqClient.chat.completions.create({
+    model: getModel(),
+    temperature: 0.3,
     messages: [
       { role: "system", content: system },
       { role: "user", content: prompt }

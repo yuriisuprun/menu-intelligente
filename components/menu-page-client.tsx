@@ -13,7 +13,7 @@ export function MenuPageClient({ slug }: { slug: string }) {
   const [tenantName, setTenantName] = useState("Tavola AI");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [assistantOpenKey, setAssistantOpenKey] = useState(0);
+  const [assistantOpenKey, setAssistantOpenKey] = useState<number | undefined>(undefined);
   const [prefilledQuestion, setPrefilledQuestion] = useState("");
 
   useEffect(() => {
@@ -73,7 +73,7 @@ export function MenuPageClient({ slug }: { slug: string }) {
                     lang={language}
                     onAskPairing={(dishName) => {
                       setPrefilledQuestion(`What pairs best with ${dishName}?`);
-                      setAssistantOpenKey((k) => k + 1);
+                      setAssistantOpenKey((k) => (k ?? 0) + 1);
                     }}
                   />
                 ))}
