@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dish } from "@/types/domain";
 
-const tenantSlug = "tavola-demo";
+const tenantSlug = process.env.NEXT_PUBLIC_TENANT_SLUG ?? "";
 
 export default function DashboardMenuPage() {
   const [dishes, setDishes] = useState<Dish[]>([]);
@@ -13,6 +13,7 @@ export default function DashboardMenuPage() {
   const [price, setPrice] = useState("12.00");
 
   async function refresh() {
+    if (!tenantSlug) return;
     const data = await fetch(`/api/menu/sync?slug=${tenantSlug}`).then((r) => r.json());
     setDishes(data.dishes ?? []);
   }
@@ -22,6 +23,7 @@ export default function DashboardMenuPage() {
   }, []);
 
   async function addDish() {
+    if (!tenantSlug) return;
     await fetch("/api/menu/sync", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -45,6 +47,11 @@ export default function DashboardMenuPage() {
   return (
     <div>
       <h1 className="text-3xl font-semibold tracking-tight text-slate-900">Menu Editor</h1>
+      {!tenantSlug && (
+        <p className="mt-4 rounded-md border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900">
+          Set NEXT_PUBLIC_TENANT_SLUG to load and edit your menu.
+        </p>
+      )}
       <div className="mt-6 grid gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4 md:grid-cols-4">
         <input
           className="h-10 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-gold/70 focus:ring-2 focus:ring-gold/20"
@@ -64,7 +71,7 @@ export default function DashboardMenuPage() {
           onChange={(e) => setPrice(e.target.value)}
           placeholder="Price"
         />
-        <Button onClick={addDish} disabled={!name}>
+        <Button onClick={addDish} disabled={!name || !tenantSlug}>
           Add Dish
         </Button>
       </div>
