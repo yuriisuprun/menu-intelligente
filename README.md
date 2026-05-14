@@ -52,6 +52,21 @@ docs/SAAS_ARCHITECTURE.md
 
 Detailed guide: [docs/LOCAL_SETUP.md](/C:/Users/yurii/MyProjects/tavola-ai/docs/LOCAL_SETUP.md)
 
+## Docker (Local DB/API)
+
+Use Docker Compose to run Postgres + PostgREST locally:
+
+1. Copy [.env.docker.example](/C:/Users/yurii/MyProjects/tavola-ai/.env.docker.example) to `.env.docker`
+2. Generate local keys:
+   - `npm run docker:keys -- "<JWT_SECRET_FROM_.env.docker>"`
+3. Start stack:
+   - `npm run docker:up`
+4. Configure app env (`.env.local`) to use:
+   - `NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321`
+   - generated anon/service keys
+
+Full guide: [docs/DOCKER_SETUP.md](/C:/Users/yurii/MyProjects/tavola-ai/docs/DOCKER_SETUP.md)
+
 ## Production Build
 
 - `npm run build`

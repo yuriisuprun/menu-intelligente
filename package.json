@@ -6,7 +6,11 @@
     "dev": "node scripts/next-with-recovery.mjs dev",
     "build": "node scripts/next-with-recovery.mjs build",
     "start": "node scripts/next-with-recovery.mjs start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "docker:keys": "node scripts/generate-local-supabase-keys.mjs",
+    "docker:up": "docker compose --env-file .env.docker up -d",
+    "docker:down": "docker compose --env-file .env.docker down",
+    "docker:smoke": "node scripts/docker-smoke-test.mjs"
   },
   "dependencies": {
     "@next/swc-win32-x64-msvc": "^15.0.3",
