@@ -64,6 +64,7 @@ Use Docker Compose to run Postgres + PostgREST locally:
 4. Configure app env (`.env.local`) to use:
    - `NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321`
    - generated anon/service keys
+   - or run `npm run docker:sync-env`
 
 Full guide: [docs/DOCKER_SETUP.md](/C:/Users/yurii/MyProjects/tavola-ai/docs/DOCKER_SETUP.md)
 

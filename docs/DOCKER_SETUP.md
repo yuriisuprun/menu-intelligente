@@ -60,6 +60,14 @@ GROQ_MODEL=llama-3.1-8b-instant
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
 
+Fast path:
+
+```bash
+npm run docker:sync-env
+```
+
+This reads `.env.docker`, generates local anon/service keys from `JWT_SECRET`, and writes required Supabase env vars into `.env.local`.
+
 ## 6) Run app
 
 ```bash
@@ -82,12 +90,15 @@ With stack running and `.env.local` configured:
 npm run docker:smoke
 ```
 
-This checks PostgREST reachability and verifies both anon/service-role API access.
+This command auto-loads `.env.local`, `.env`, `.env.docker`, and `.env.docker.local`.
+If API keys are missing, it will generate short-lived anon/service JWTs from `JWT_SECRET`.
+Then it checks PostgREST reachability and verifies both anon/service-role API access.
 
 ## Useful commands
 
 - Stop stack: `docker compose --env-file .env.docker down`
 - Stop and remove DB volume: `docker compose --env-file .env.docker down -v`
 - Generate keys: `npm run docker:keys -- "your-jwt-secret"`
+- Sync `.env.local` from Docker env: `npm run docker:sync-env`
 - Start core services: `npm run docker:up`
 - Run smoke test: `npm run docker:smoke`

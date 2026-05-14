@@ -8,6 +8,7 @@
     "start": "node scripts/next-with-recovery.mjs start",
     "lint": "next lint",
     "docker:keys": "node scripts/generate-local-supabase-keys.mjs",
+    "docker:sync-env": "node scripts/docker-sync-env.mjs",
     "docker:up": "docker compose --env-file .env.docker up -d",
     "docker:down": "docker compose --env-file .env.docker down",
     "docker:smoke": "node scripts/docker-smoke-test.mjs"
